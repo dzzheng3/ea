@@ -34,7 +34,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.successHandler(customSuccessHandler)
 				.and()
 				.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-				.logoutSuccessUrl("/").permitAll();
+				.logoutSuccessUrl("/login").permitAll();
+//		http.rememberMe().rememberMeParameter("rememberMe");
 	}
 
 	@Autowired

@@ -10,19 +10,20 @@
 </head>
 <body>
 <div> Current User : <sec:authentication property="name"/></div>
-	products:
 	<br />
-	<a href="/admin/createProduct">Create</a>
-	<a href="/admin/listProducts">List</a>
+	<a href="/manageProduct">Manage products</a>
 	<br />
 	<br /> 
-	persons:
 	<br />
-	<a href="/admin/createPerson">Create</a>
-	<a href="/admin/listPersons">List</a> 
+	<a href="/manageCatagory">Manage Catagory</a>
 	<br />
 	<br /> 
-	orders:
+	<br />
+	<a href="/manageProduct">Manage Users</a>
+	<br />
+	<br />
+	<a href="/logout">logout</a>
+	Manage Coment:
 	<br />
 	<a href="/admin/listOrder">List orders</a>
 	<br />
