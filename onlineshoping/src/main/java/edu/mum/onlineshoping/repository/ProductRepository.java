@@ -1,18 +1,21 @@
 package edu.mum.onlineshoping.repository;
 
-import java.io.Serializable;
-import java.util.List;
-
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import edu.mum.onlineshoping.domain.Product;
-import edu.mum.onlineshoping.domain.ProductType;
+import edu.mum.onlineshoping.model.Product;
 
 @Repository
-public interface ProductRepository  extends JpaRepository<Product, Serializable>{
+public interface ProductRepository extends  CrudRepository<Product, Long>{
 
-	public List<Product> findByProductNameLikeOrDescriptionLikeAllIgnoreCase(String productName, String description); 
-	public List<Product> findByProductType(ProductType productType); 
-	public List<Product> findByPriceBetween(Double minPrice, Double maxPrice);
+	//void updateProduct();
+	/*@Query("SELECT p FROM Product p")
+	public List <Product> findAllProduct();
+	public Product getProductById(Long key);
+	public List<Product> getProductsByCategory(String category);
+	public void delete(Long id);
+	public void addProduct(Product product);	*/
+	
+	
+
 }

@@ -9,6 +9,40 @@
 </head>
 <body>
 
-TODO:add product
+<form:form modelAttribute="product" action="saveProduct">	
+    <table border="1">
+      <tr>
+        <td><form:label path="pName">pName:</form:label></td>
+        <td><form:input path="pName" /></td>
+      </tr>
+      <tr>
+        <td><form:label path="unitPrice">unitPrice:</form:label></td>
+        <td><form:input path="unitPrice" /></td>
+      </tr>
+      <tr>
+        <td><form:label path="description">description:</form:label></td>
+        <td><form:textarea path="description" /></td>
+      </tr>
+      <tr>
+        <td><form:label path="discount">discount:</form:label></td>
+        <td><form:input path="discount" /></td>
+      </tr>
+      <tr>
+        <td><form:label path="conditioned">conditioned:</form:label></td>
+        <td><form:input path="conditioned" /></td>
+      </tr>
+      <tr>
+        <td><form:label path="category.cName">category.cName":</form:label></td>
+        <td><form:input path="category.cName"" /></td>
+      </tr>
+      <tr>
+        <td><form:label path="category.description">category.description":</form:label></td>
+        <td><form:input path="category.description"" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="saveProduct" /></td>
+      </tr>
+    </table>
+    </form:form>
 </body>
 </html>

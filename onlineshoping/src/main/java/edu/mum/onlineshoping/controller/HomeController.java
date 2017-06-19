@@ -1,20 +1,8 @@
 package edu.mum.onlineshoping.controller;
 
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-
-import edu.mum.onlineshoping.domain.Person;
-import edu.mum.onlineshoping.domain.Product;
-import edu.mum.onlineshoping.domain.ProductType;
-import edu.mum.onlineshoping.service.PersonService;
-import edu.mum.onlineshoping.service.ProductService;
 
 @Controller
 public class HomeController {
@@ -47,21 +35,21 @@ public class HomeController {
 		return "login";
 	}
 	
-	@Autowired
-	public PersonService personService;
-	@GetMapping({ "/regist" })
-	public ModelAndView toRegistPage() {
-		ModelAndView modelAndView = new ModelAndView("regist");
-		Person person = new Person();
-		modelAndView.addObject(person);
-		return modelAndView;
-	}
-
-	@RequestMapping("/savePerson")
-	public String saveProductPage(@ModelAttribute(value = "person") Person person) {
-		System.out.println(person);
-		personService.savePerson(person);
-		return "redirect:/login";
-	}
+//	@Autowired
+//	public PersonService personService;
+//	@GetMapping({ "/regist" })
+//	public ModelAndView toRegistPage() {
+//		ModelAndView modelAndView = new ModelAndView("regist");
+//		Person person = new Person();
+//		modelAndView.addObject(person);
+//		return modelAndView;
+//	}
+//
+//	@RequestMapping("/savePerson")
+//	public String saveProductPage(@ModelAttribute(value = "person") Person person) {
+//		System.out.println(person);
+//		personService.savePerson(person);
+//		return "redirect:/login";
+//	}
 	
 }

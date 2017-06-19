@@ -2,50 +2,14 @@ package edu.mum.onlineshoping.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import edu.mum.onlineshoping.model.Product;
 
-import edu.mum.onlineshoping.domain.Product;
-import edu.mum.onlineshoping.domain.ProductType;
-import edu.mum.onlineshoping.repository.ProductRepository;
+public interface ProductService {
+	public List <Product> getAll();
+	public Product getProductById(Long key);
+	public void delete(Long id);
+	public void addProduct(Product product);	
+	//public void updateProduct(Long key);
 
-@Service
-@Transactional
-public class ProductService   {
-	
-	@Autowired
-	private ProductRepository productRepository;
-		
-	public Product save(Product product) {
-		return productRepository.save(product);
-	}
 
-	public void delete(Product product) {
-		productRepository.delete(product);
-	}
-
-	public Product getProduct(int productId) {
-		return  productRepository.findOne(productId);
-	}
-
-	public List<Product> getAllProduct() {
-		return  productRepository.findAll() ;
-	}
-	
-	public List<Product> findByTextSearch(String criteria) {
-		if (!criteria.contains("%")) {
-			criteria = "%"+criteria+"%";
-		}
-		return productRepository.findByProductNameLikeOrDescriptionLikeAllIgnoreCase(criteria, criteria);
-	}
-
-	public List<Product> findByPrice(double minPrice, double maxPrice) {
-		return  productRepository.findByPriceBetween(minPrice, maxPrice);
-	}
-	
-	public List<Product> findByProductType(ProductType productType) {
-		 return productRepository.findByProductType(productType);
-	}
-	
 }
