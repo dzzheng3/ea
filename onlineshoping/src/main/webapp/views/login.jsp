@@ -4,24 +4,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Online Shopping</title>
 </head>
 <body>
-	<h1>Welcome TO My Zone</h1>
+	<h1>Welcome To My Shop</h1>
 	<form action="/login" method="post">
 		<div>
-			<label> username: <input type="text" name="username" />
+			<label> Username: <input type="text" name="username" />
 			</label>
 		</div>
 		<div>
-			<label> password: <input type="password" name="password" />
+			<label> Password: <input type="password" name="password" />
 			</label>
 		</div>
 		<div>
 			<input type="submit" value="login" />
-			<a href="regist">regist</a>
+			
 		</div>
 		
 	</form>
+	<a href="register">Register</a>
 </body>
 </html>
