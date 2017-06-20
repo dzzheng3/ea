@@ -9,53 +9,58 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form:form modelAttribute="user" action="/admin/updatePersonAndSave">
-		<c:if test="${user.id != null }">
+	<form:form modelAttribute="customer" action="/user/editProfile">
+		<c:if test="${customer.id != null }">
 			<form:hidden path="id" />
 		</c:if>
 		<table border="1">
 			<tr>
-				<td><form:label path="firstName">FirstName:</form:label></td>
-				<td><form:input path="firstName" value="${user.firstName }" /></td>
+				<td><form:label path="fName">FirstName:</form:label></td>
+				<td><form:input path="fName" value="${customer.fName }" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="lastName">LastName:</form:label></td>
-				<td><form:input path="lastName" value="${user.lastName }" /></td>
+				<td><form:label path="lName">LastName:</form:label></td>
+				<td><form:input path="lName" value="${customer.lName }" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="email">Email:</form:label></td>
-				<td><form:input path="email" value="${user.email }" /></td>
+				<td><form:input path="email" value="${customer.email }" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="phone">phone:</form:label></td>
-				<td><form:input path="phone" value="${user.phone }" /></td>
+				<td><form:label path="phone">Phone:</form:label></td>
+				<td><form:input path="phone" value="${customer.phone }" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="identificationNumber">Identification No:</form:label></td>
+				<td><form:input path="identificationNumber"
+						value="${customer.identificationNumber }" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="address.city">City:</form:label></td>
 				<td><form:input path="address.city"
-						value="${user.address.city }" /></td>
+						value="${customer.address.city }" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="address.state">State:</form:label></td>
 				<td><form:input path="address.state"
-						value="${user.address.state }" /></td>
+						value="${customer.address.state }" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="address.country">Country:</form:label></td>
 				<td><form:input path="address.country"
-						value="${user.address.country }" /></td>
+						value="${customer.address.country }" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="address.zipcode">Zipcode:</form:label></td>
 				<td><form:input path="address.zipcode"
-						value="${user.address.zipcode }" /></td>
+						value="${customer.address.zipcode }" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="enable">enable</form:label></td>
-				<td><form:checkbox path="enable" value="${user.enable }" /></td>
+				<td><form:label path="enable">Enable</form:label></td>
+				<td><form:checkbox path="enable" value="${customer.user.enable }" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="updatePerson" /></td>
+				<td colspan="2"><input type="submit" value="Update Profile" /></td>
 			</tr>
 		</table>
 	</form:form>

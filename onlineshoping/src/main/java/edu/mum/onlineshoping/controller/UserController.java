@@ -1,5 +1,7 @@
 package edu.mum.onlineshoping.controller;
 
+import java.security.Principal;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,57 +27,62 @@ public class UserController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String signUp(Model model) {
-		model.addAttribute("customer",new Customer());
+		model.addAttribute("customer", new Customer());
 		return "user/register";
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String afterSignUp(@ModelAttribute("user") @Valid Customer customer, BindingResult result,
-			RedirectAttributes redirectAttributes) {
-		System.out.println("112222222222222");
+	public String afterSignUp(@Valid Customer customer, BindingResult result, RedirectAttributes redirectAttributes,
+			Model model) {
+		model.addAttribute("customer", customer);
 		customer.getUser().setHasRole(Role.ROLE_CUSTOMER);
-		if (result.hasErrors())
-			return "register";
+		if (result.hasErrors()) {
+			return "user/register";
+		}
 		userService.save(customer);
 		redirectAttributes.addFlashAttribute("customer", customer);
-		return "redirect:/index";
+		return "redirect:/login";
 
 	}
-	
+
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
-	public String allUser(Model model){
+	public String allUser(Model model) {
 		model.addAttribute("users", userService.findAll());
 		return "users";
 	}
-	
+
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
-	public String delete(@PathVariable Long id){
+	public String delete(@PathVariable Long id) {
 		userService.delete(id);
 		return "users";
 	}
-	
-	@RequestMapping(value = "/updateUser/{id}", method = RequestMethod.GET)
-	public String edit(@PathVariable Long id, Model model)
-	{
-		Customer customer= userService.findOne(id);
-		model.addAttribute("user", customer);
-		return "updateUser";
+
+	@RequestMapping(value = "/editProfile/{id}", method = RequestMethod.GET)
+	public String edit(@PathVariable Long id, Model model) {
+		Customer customer = userService.findOne(id);
+		model.addAttribute("customer", customer);
+		return "editProfile";
 	}
-	
-	@RequestMapping(value = "/updateUser", method = RequestMethod.POST)
-	public String afterEdit(@ModelAttribute("user") @Valid Customer customer, BindingResult result,
-			RedirectAttributes redirectAttributes){
+
+	@RequestMapping(value = "/editProfile", method = RequestMethod.POST)
+	public String afterEdit(@ModelAttribute("customer") @Valid Customer customer, BindingResult result,
+			RedirectAttributes redirectAttributes) {
 		customer.getUser().setHasRole(Role.ROLE_CUSTOMER);
 		if (result.hasErrors())
-			return "updateUser";
+			return "editProfile";
 		customer.setId(customer.getId());
 		userService.edit(customer);
 		redirectAttributes.addFlashAttribute("customer", customer);
-		return "redirect:/index";
+		return "redirect:/profile";
 	}
-	
-	
-	
-	
-}
 
+	@RequestMapping(value = "/account", method = RequestMethod.GET)
+	public String account(Model model, Principal principal) {
+		String name = principal.getName();
+		Customer customer = userService.findOneWithName(name);
+		model.addAttribute("user", customer);
+		return "profile";
+
+	}
+
+}
