@@ -19,9 +19,7 @@ public class Category {
 	@javax.persistence.Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long Id;
-	@NotEmpty()
 	private String cName;
-	@NotEmpty
 	private String description;
 	/*//@JsonIgnore 
 	@Transient

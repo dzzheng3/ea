@@ -39,7 +39,7 @@ public class Product {
 	@NotEmpty
 	@Size(min=2,message="{Size.Product.conditioned.validation}")
 	private String conditioned;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Category category;
 	/*@OneToMany(fetch= FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Review> reviews;*/

@@ -10,28 +10,14 @@
 </head>
 <body>
 <div> Current User : <sec:authentication property="name"/></div>
-Manage products:
+Manage Users:
 	<br />
-	<a href="/addProduct">Add Product</a>
+	<a href="/addUser">Add User</a>
 	<br />
 	<br />
-	<a href="/listProduct">List Product</a>
-	<br />
-	<br /> 
-	<br />
-	<a href="/admin/createPerson">Manage Catagory</a>
+	<a href="/listUser">List User</a>
 	<br />
 	<br /> 
-	<br />
-	<a href="/admin/listOrder">Manage Users</a>
-	<br />
-	<br />
-	<a href="/logout">logout</a>
-	Manage Coment:
-	<br />
-	<a href="/admin/listOrder">List orders</a>
-	<br />
-	<br />
-	<a href="/login">logout</a>
+	<%@ include file="header.jsp" %>
 </body>
 </html>

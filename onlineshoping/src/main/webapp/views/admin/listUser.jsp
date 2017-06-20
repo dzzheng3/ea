@@ -9,26 +9,49 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${empty requestScope.products }">
-	No products!
+<c:if test="${empty requestScope.customers }">
+	No customers!
 </c:if>
-<c:if test="${!empty requestScope.products }">
+<c:if test="${!empty requestScope.customers }">
 	<table border="1"><tr>
 			<th>id</th>
-			<th>productName</th>
-			<th>description</th>
-			<th>price</th>
-			<th>productType</th>
+			<th>fName</th>
+			<th>lName</th>
+			<th>phone</th>
+			<th>email</th>
+			<th>dob</th>
+			<th>identificationNumber</th>
+			<th>address.street</th>
+			<th>address.city</th>
+			<th>address.state</th>
+			<th>address.zip</th>
+			<th>address.country</th>
+			<th>user.username</th>
+			<th>user.password</th>
+			<th>user.hasRole</th>
+			<th>user.enabled</th>
+			
 		</tr>
-		<c:forEach items="${requestScope.products }" var="product">
+		<c:forEach items="${requestScope.customers }" var="customer">
 		<tr>
-			<td>${product.id} </td>			
-			<td>${product.productName} </td>			
-			<td>${product.description} </td>			
-			<td>${product.price} </td>			
-			<td>${product.productType} </td>			
-			<td><a href="/admin/deleteProducts/${product.id }">delete</a></td>			
-			<td><a href="/admin/updateProducts/${product.id }">update</a></td>			
+			<td>${customer.id} </td>			
+			<td>${customer.fName} </td>			
+			<td>${customer.lName} </td>			
+			<td>${customer.phone} </td>			
+			<td>${customer.email} </td>			
+			<td>${customer.dob} </td>			
+			<td>${customer.identificationNumber} </td>			
+			<td>${customer.address.street} </td>			
+			<td>${customer.address.city} </td>			
+			<td>${customer.address.state} </td>			
+			<td>${customer.address.zip} </td>			
+			<td>${customer.address.country} </td>			
+			<td>${customer.user.username} </td>			
+			<td>${customer.user.password} </td>			
+			<td>${customer.user.hasRole} </td>			
+			<td>${customer.user.enabled} </td>			
+			<td><a href="/deleteUser/${customer.id }">delete</a></td>			
+			<td><a href="/updateUser/${customer.id }">update</a></td>			
 		</tr>
 		</c:forEach>
 	</table>

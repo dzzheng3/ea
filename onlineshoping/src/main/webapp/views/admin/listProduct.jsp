@@ -15,20 +15,28 @@
 <c:if test="${!empty requestScope.products }">
 	<table border="1"><tr>
 			<th>id</th>
-			<th>productName</th>
+			<th>pName</th>
+			<th>unitPrice</th>
 			<th>description</th>
-			<th>price</th>
-			<th>productType</th>
+			<th>unitsInStock</th>
+			<th>discount</th>
+			<th>conditioned</th>
+			<th>category.cName</th>
+			<th>category.description</th>
 		</tr>
 		<c:forEach items="${requestScope.products }" var="product">
 		<tr>
 			<td>${product.id} </td>			
-			<td>${product.productName} </td>			
+			<td>${product.pName} </td>			
+			<td>${product.unitPrice} </td>			
 			<td>${product.description} </td>			
-			<td>${product.price} </td>			
-			<td>${product.productType} </td>			
-			<td><a href="/admin/deleteProducts/${product.id }">delete</a></td>			
-			<td><a href="/admin/updateProducts/${product.id }">update</a></td>			
+			<td>${product.unitsInStock} </td>			
+			<td>${product.discount} </td>			
+			<td>${product.conditioned} </td>			
+			<td>${product.category.cName} </td>			
+			<td>${product.category.description} </td>			
+			<td><a href="/deleteProduct/${product.id }">delete</a></td>			
+			<td><a href="/updateProduct/${product.id }">update</a></td>			
 		</tr>
 		</c:forEach>
 	</table>

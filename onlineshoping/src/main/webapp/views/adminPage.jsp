@@ -15,11 +15,11 @@
 	<br />
 	<br /> 
 	<br />
-	<a href="/manageCatagory">Manage Catagory</a>
+	<a href="/manageCategory">Manage Category</a>
 	<br />
 	<br /> 
 	<br />
-	<a href="/manageProduct">Manage Users</a>
+	<a href="/manageUser">Manage Users</a>
 	<br />
 	<br />
 	<a href="/logout">logout</a>

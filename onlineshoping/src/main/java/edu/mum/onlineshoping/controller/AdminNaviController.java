@@ -9,9 +9,9 @@ public class AdminNaviController {
 	public String manageProduct(){
 		return "admin/manageProduct";
 	}
-	@RequestMapping("/manageCatagory")
+	@RequestMapping("/manageCategory")
 	public String manageCatagory(){
-		return "admin/manageCatagory";
+		return "admin/manageCategory";
 	}
 	@RequestMapping("/manageUser")
 	public String manageUser(){
