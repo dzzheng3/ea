@@ -57,7 +57,8 @@
 			</tr>
 			<tr>
 				<td><form:label path="enable">Enable</form:label></td>
-				<td><form:checkbox path="enable" value="${customer.user.enable }" /></td>
+				<td><form:checkbox path="enable"
+						value="${customer.user.enable }" /></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="Update Profile" /></td>

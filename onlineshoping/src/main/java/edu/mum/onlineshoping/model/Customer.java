@@ -41,7 +41,7 @@ public class Customer {
 	@Temporal(TemporalType.DATE)
 	@Past(message="past")
 	private Date dob;
-	//@NotEmpty(message="Not Empty")
+	@NotEmpty(message="Not Empty")
 	private String identificationNumber;
 	@OneToOne(cascade=CascadeType.ALL)
 	@Valid

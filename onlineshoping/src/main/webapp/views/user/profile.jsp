@@ -32,7 +32,8 @@
 			</tr>
 			<tr>
 				<td><form:label path="identificationNumber">Identification No:</form:label></td>
-				<td><form:input path="identificationNumber" value="${customer.identificationNumber }" /></td>
+				<td><form:input path="identificationNumber"
+						value="${customer.identificationNumber }" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="dob">DOB:</form:label></td>
@@ -60,7 +61,8 @@
 			</tr>
 			<tr>
 				<td><form:label path="enable">Enable</form:label></td>
-				<td><form:checkbox path="enable" value="${customer.user.enable }" /></td>
+				<td><form:checkbox path="enable"
+						value="${customer.user.enable }" /></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="Save" /></td>
