@@ -10,7 +10,7 @@
 <body>
 
 	<form:form modelAttribute="customer" action="addUser" method="post">
-		
+
 		<table>
 			<tr>
 				<td><form:label path="fName">fName:</form:label></td>
@@ -79,16 +79,16 @@
 			</tr>
 			<tr>
 				<td><form:label path="user.hasRole">hasRole:</form:label></td>
-				<td><form:input path="user.hasRole" /></td>
+				<td><form:select path="user.hasRole" items="${role}" /></td>
 				<td><form:errors path="user.hasRole" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="user.enabled">enabled:</form:label></td>
-				<td><form:input path="user.enabled" /></td>
+				<td><form:checkbox path="user.enabled" /></td>
 				<td><form:errors path="user.enabled" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="addCategory" /></td>
+				<td colspan="2"><input type="submit" value="addUser" /></td>
 			</tr>
 		</table>
 	</form:form>

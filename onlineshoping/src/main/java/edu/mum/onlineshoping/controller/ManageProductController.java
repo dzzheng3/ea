@@ -14,18 +14,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import edu.mum.onlineshoping.model.Category;
 import edu.mum.onlineshoping.model.Product;
+import edu.mum.onlineshoping.service.CategoryService;
 import edu.mum.onlineshoping.service.ProductService;
 
 @Controller("/admin/manageProduct")
 public class ManageProductController {
 	@Autowired
 	private ProductService productService;
+	@Autowired
+	private CategoryService categoryService;
 
 	@RequestMapping("/addProduct")
 	public String addProduct(Model model) {
 		Product product = new Product();
 		model.addAttribute("product", product);
+		List<Category> categories = categoryService.getAll();
+		System.out.println(categories.size()+"");
+		model.addAttribute("categories", categories);
 		System.out.println("/addProduct");
 		return "/admin/addProduct";
 	}
@@ -40,6 +47,9 @@ public class ManageProductController {
 //			for (ObjectError error : list) {
 //				System.out.println(error.getCode() + "---" + error.getArguments() + "---" + error.getDefaultMessage());
 //			}
+			List<Category> categories = categoryService.getAll();
+			System.out.println(categories.size()+"");
+			model.addAttribute("categories", categories);
 			return "admin/addProduct";
 		}
 		productService.addProduct(product);
@@ -63,6 +73,8 @@ public class ManageProductController {
 	public String updateProductsPage(@PathVariable("id") Long id, Map<String, Object> map) {
 		Product product = productService.getProductById(id);
 		map.put("product", product);
+		List<Category> categories = categoryService.getAll();
+		map.put("categories",categories);
 		return "/admin/updateProduct";
 	}
 

@@ -3,6 +3,7 @@ package edu.mum.onlineshoping.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,6 +36,10 @@ public class CategoryServiceImpl implements CategoryService {
 	@Override
 	public void delete(Long id) {
 		categoryRepository.delete(id);
+		
+	}
+	public List<Category> findByCategoryName(String name) {
+		return categoryRepository.findByCategoryName(name);
 		
 	}
 

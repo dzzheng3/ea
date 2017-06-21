@@ -15,7 +15,10 @@ public class User {
 	@javax.persistence.Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long Id;
+	@NotEmpty
 	private String username;
+	@NotEmpty
+	@Size(min=5)
 	private String password;
 	@Enumerated(EnumType.STRING)
 	private Role hasRole;

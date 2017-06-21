@@ -26,5 +26,9 @@
       </tr>
     </table>
     </form:form>
+    <br/>
+    <br/>
+   <h3>${msg}</h3>
+    
 </body>
 </html>
