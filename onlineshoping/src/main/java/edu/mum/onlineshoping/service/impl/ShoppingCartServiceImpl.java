@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import edu.mum.onlineshoping.model.OrderDetails;
 import edu.mum.onlineshoping.model.Product;
+import edu.mum.onlineshoping.model.ShoppingCart;
 import edu.mum.onlineshoping.repository.OrderDetailsRepository;
 import edu.mum.onlineshoping.repository.ProductRepository;
 import edu.mum.onlineshoping.repository.ShoppingCartRepository;
@@ -104,13 +105,13 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
 	}
 
 	@Override
-	public void deletAllChart() {
-	  
+	public void deletAllCart() {
+	 
 		shoppingCartRepository.deleteAll();
 	}
 
 	@Override
-	public double findTotalCharCost(List<ShoppingCart> shoppingCarts) {
+	public double findTotalCartCost(List<ShoppingCart> shoppingCarts) {
 		 
 		double totalPrice = 0;
 		for(ShoppingCart sc : shoppingCarts){
