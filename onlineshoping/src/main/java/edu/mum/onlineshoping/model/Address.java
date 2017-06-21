@@ -15,18 +15,10 @@ public class Address {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	@NotEmpty(message="Not Empty")
 	private String street;
-	@NotEmpty(message="Not Empty")
 	private String city;
-	@NotEmpty(message="Not Empty")
-	@Size(min=2,max=2,message="Not valid")
 	private String state;
-	@NotEmpty
-	@Digits(integer=1,fraction=0,message="digit")
-	@Size(min=1,max=1,message="Not Valid")
 	private String zip;
-	@NotEmpty(message="Not Empty")
 	private String country;
 	public String getStreet() {
 		return street;

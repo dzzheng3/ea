@@ -51,7 +51,7 @@
 			<td>${customer.user.hasRole} </td>			
 			<td>${customer.user.enabled} </td>			
 			<td><a href="/deleteUser/${customer.id }">delete</a></td>			
-			<td><a href="/updateUser/${customer.id }">update</a></td>			
+			<td><a href="/updateUserForAdmin/${customer.id }">update</a></td>			
 		</tr>
 		</c:forEach>
 	</table>

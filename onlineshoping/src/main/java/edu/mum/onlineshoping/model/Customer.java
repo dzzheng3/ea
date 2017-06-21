@@ -28,28 +28,28 @@ public class Customer {
 	@javax.persistence.Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long Id;
-	@NotEmpty(message="NotEmpty")
 	private String fName;
 	private String lName;
-	@NotEmpty(message="NotEmpty")
-	@Size(min=5,max=5,message="Not Valid")
 	private String phone;
-	@Email(message="enter valid email")
 	private String email;
 	@DateTimeFormat(pattern="MM/dd/yyyy")
-	@NotNull(message="Can not be Null")
 	@Temporal(TemporalType.DATE)
-	@Past(message="past")
 	private Date dob;
-	@NotEmpty(message="Not Empty")
 	private String identificationNumber;
 	@OneToOne(cascade=CascadeType.ALL)
-	@Valid
 	private Address address;
 	@OneToOne(cascade = CascadeType.ALL)
-	@Valid
 	private User user;
-	
+	/*@OneToMany(fetch= FetchType.LAZY, cascade=CascadeType.ALL)
+	private List<Order> orders;*/
+	/*@Transient
+	private MultipartFile multipartfile;
+	public MultipartFile getMultipartfile() {
+		return multipartfile;
+	}
+	public void setMultipartfile(MultipartFile multipartfile) {
+		this.multipartfile = multipartfile;
+	}*/
 	public Long getId() {
 		return Id;
 	}
