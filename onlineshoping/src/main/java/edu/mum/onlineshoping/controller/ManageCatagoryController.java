@@ -15,11 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.mum.onlineshoping.model.Category;
 import edu.mum.onlineshoping.service.CategoryService;
+import edu.mum.onlineshoping.service.impl.CategoryServiceImpl;
 
 @Controller("/admin/manageCategory")
 public class ManageCatagoryController {
 	@Autowired
-	private CategoryService categoryService;
+	private CategoryServiceImpl categoryService;
 
 	@RequestMapping("/addCategory")
 	public String addCategory(Model model) {
@@ -31,6 +32,11 @@ public class ManageCatagoryController {
 
 	@RequestMapping(value = "/addCategory", method = RequestMethod.POST)
 	public String addCategory(@Valid Category category, BindingResult result,Model model) {
+		 List<Category> findByCategoryName = categoryService.findByCategoryName(category.getcName());
+		if(findByCategoryName.size()>0){
+			model.addAttribute("msg","CategoryName already exiest !!!");
+			return "admin/addCategory";
+		}
 		model.addAttribute("category",category);
 		System.out.println("/ccc");
 		

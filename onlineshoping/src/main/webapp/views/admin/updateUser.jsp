@@ -84,7 +84,7 @@
 			</tr>
 			<tr>
 				<td><form:label path="user.enabled">enabled:</form:label></td>
-				<td><form:input path="user.enabled" value="${customer.user.enabled }"/></td>
+				<td><form:checkbox path="user.enabled" value="${customer.user.enabled }"/></td>
 				<td><form:errors path="user.enabled" cssClass="error" /></td>
 			</tr>
 			<tr>
