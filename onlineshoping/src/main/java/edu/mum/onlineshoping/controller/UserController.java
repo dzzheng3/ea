@@ -20,13 +20,13 @@ import edu.mum.onlineshoping.model.Role;
 import edu.mum.onlineshoping.service.UserService;
 
 @Controller
-@SessionAttributes("userSession")
 public class UserController {
 	@Autowired
 	private UserService userService;
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String signUp(Model model) {
+		System.out.println("111111111111111");
 		model.addAttribute("customer", new Customer());
 		return "user/register";
 	}
@@ -34,6 +34,7 @@ public class UserController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String afterSignUp(@Valid Customer customer, BindingResult result, RedirectAttributes redirectAttributes,
 			Model model) {
+		System.out.println("22222222222222");
 		model.addAttribute("customer", customer);
 		customer.getUser().setHasRole(Role.ROLE_CUSTOMER);
 		if (result.hasErrors()) {

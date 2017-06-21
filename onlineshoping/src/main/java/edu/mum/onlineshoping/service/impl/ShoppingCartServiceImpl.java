@@ -10,11 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import edu.mum.onlineshoping.model.OrderDetails;
 import edu.mum.onlineshoping.model.Product;
-import edu.mum.onlineshoping.model.ShoppingCart;
 import edu.mum.onlineshoping.repository.OrderDetailsRepository;
 import edu.mum.onlineshoping.repository.ProductRepository;
 import edu.mum.onlineshoping.repository.ShoppingCartRepository;
 import edu.mum.onlineshoping.service.ShoppingCartService;
+
 
 @Service
 @Transactional

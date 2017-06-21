@@ -23,7 +23,7 @@ public class Address {
 	@Size(min=2,max=2,message="Not valid")
 	private String state;
 	@NotEmpty
-	//@Digits(integer=5,fraction=0,message="digit")
+	@Digits(integer=1,fraction=0,message="digit")
 	@Size(min=1,max=1,message="Not Valid")
 	private String zip;
 	@NotEmpty(message="Not Empty")

@@ -31,6 +31,11 @@
 				<td><form:input path="email" /></td>
 				<td><form:errors path="email" /></td>
 			</tr>
+			<%-- <tr>
+				<td><form:label path=" identificationNumber">Identification No:</form:label></td>
+				<td><form:input path=" identificationNumber" /></td>
+				<td><form:errors path=" identificationNumber" /></td>
+			</tr> --%>
 			<tr>
 				<td><form:label path="phone">Phone:</form:label></td>
 				<td><form:input path="phone" /></td>

@@ -35,6 +35,13 @@ public class HomeController {
 		return "login";
 	}
 	
+	@RequestMapping("/register")
+	public String register(){
+		System.out.println("11111111111");
+		return "register";
+	}
+	
+	
 //	@Autowired
 //	public PersonService personService;
 //	@GetMapping({ "/regist" })

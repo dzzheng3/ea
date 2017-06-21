@@ -30,11 +30,11 @@
 				<td><form:label path="phone">Phone:</form:label></td>
 				<td><form:input path="phone" value="${customer.phone }" /></td>
 			</tr>
-			<tr>
+			<%-- <tr>
 				<td><form:label path="identificationNumber">Identification No:</form:label></td>
 				<td><form:input path="identificationNumber"
 						value="${customer.identificationNumber }" /></td>
-			</tr>
+			</tr> --%>
 			<tr>
 				<td><form:label path="address.city">City:</form:label></td>
 				<td><form:input path="address.city"
