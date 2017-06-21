@@ -58,8 +58,9 @@ public class ManageUserController {
 		return "redirect:/listUser";
 	}
 
-	@RequestMapping("/updateUser/{id}")
+	@RequestMapping("/updateUserForAdmin/{id}")
 	public String updateUsersPage(@PathVariable("id") Long id, Map<String, Object> map) {
+		System.out.println("/updateUsersPage");
 		Customer customer = UserService.findOne(id);
 		map.put("customer", customer);
 		return "/admin/updateUser";
@@ -74,8 +75,16 @@ public class ManageUserController {
 //		System.out.println("2222222222");
 //	}
 
-	@RequestMapping(value="/updateUser/{id}",method=RequestMethod.POST)
-	public String updateUsersPage(@PathVariable("id") Long id,Customer customer) {
+	@RequestMapping(value="/updateUserForAdmin/{id}",method=RequestMethod.POST)
+	public String updateUsersPage(@PathVariable("id") Long id,@Valid Customer customer, BindingResult result,Model model) {
+		model.addAttribute("customer",customer);
+		if (result.hasErrors()) {
+//			List<ObjectError> list = result.getAllErrors();
+//			for (ObjectError error : list) {
+//				System.out.println(error.getCode() + "---" + error.getArguments() + "---" + error.getDefaultMessage());
+//			}
+			return "admin/updateUser";
+		}
 		UserService.save(customer);
 		System.out.println(customer);
 		return "redirect:/listUser";
