@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import edu.mum.onlineshoping.model.ShoppingCart;
 
+
+
 @Repository
 public interface ShoppingCartRepository extends CrudRepository<ShoppingCart, Long>{
 	

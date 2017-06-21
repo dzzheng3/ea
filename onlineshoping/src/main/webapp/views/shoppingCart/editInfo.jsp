@@ -6,9 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>My Profile</title>
+<title>User Information</title>
 </head>
 <body>
+	<h1>Confirm your information</h1>
 	<form:form modelAttribute="customer" action="/user/editProfile">
 		<c:if test="${customer.id != null }">
 			<form:hidden path="id" />
@@ -20,7 +21,12 @@
 			</tr>
 			<tr>
 				<td><form:label path="lName">LastName:</form:label></td>
-				<td><form:input path="lName" value="${customer.lastName }" /></td>
+				<td><form:input path="lName" value="${customer.lName }" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="identificationNumber">Identification No:</form:label></td>
+				<td><form:input path="identificationNumber"
+						value="${customer.identificationNumber }" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="email">Email:</form:label></td>
@@ -30,15 +36,7 @@
 				<td><form:label path="phone">Phone:</form:label></td>
 				<td><form:input path="phone" value="${customer.phone }" /></td>
 			</tr>
-			<%-- <tr>
-				<td><form:label path="identificationNumber">Identification No:</form:label></td>
-				<td><form:input path="identificationNumber"
-						value="${customer.identificationNumber }" /></td>
-			</tr> --%>
-			<tr>
-				<td><form:label path="dob">DOB:</form:label></td>
-				<td><form:input path="dob" value="${customer.dob }" /></td>
-			</tr>
+			<tr><td><h3>Address</h3></td></tr>
 			<tr>
 				<td><form:label path="address.city">City:</form:label></td>
 				<td><form:input path="address.city"
@@ -59,13 +57,9 @@
 				<td><form:input path="address.zipcode"
 						value="${customer.address.zipcode }" /></td>
 			</tr>
+			
 			<tr>
-				<td><form:label path="enable">Enable</form:label></td>
-				<td><form:checkbox path="enable"
-						value="${customer.user.enable }" /></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="Save" /></td>
+				<td colspan="2"><input type="submit" value="Update Information" /></td>
 			</tr>
 		</table>
 	</form:form>

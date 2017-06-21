@@ -65,7 +65,7 @@ public class HomeController implements CommandLineRunner {
 
 	@JmsListener(destination = "my-destination")
 	public void receiveMessage(String message) {
-		System.out.println("receive messageï¼š" + message);
+		System.out.println("receive message£º" + message);
 	}
 
 	// @Autowired

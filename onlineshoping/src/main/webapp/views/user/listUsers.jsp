@@ -37,11 +37,11 @@
 			<td>${customer.address.country} </td>			
 			<td>${customer.address.zipcode} </td>			
 					
-			<td><a href="/admin/updateUser/${customer.id }">Update</a></td>			
+			<td><a href="/admin/manageUser/${customer.id }">Update</a></td>			
 		</tr>
 		</c:forEach>
 	</table>
 </c:if>
-<a href="/admin">go home</a>
+<a href="/admin">Go home</a>
 </body>
 </html>

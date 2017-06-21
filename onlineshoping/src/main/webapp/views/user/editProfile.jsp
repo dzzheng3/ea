@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Edit Profile</title>
 </head>
 <body>
 	<form:form modelAttribute="customer" action="/user/editProfile">
@@ -55,11 +55,11 @@
 				<td><form:input path="address.zipcode"
 						value="${customer.address.zipcode }" /></td>
 			</tr>
-			<tr>
+			<%-- <tr>
 				<td><form:label path="enable">Enable</form:label></td>
 				<td><form:checkbox path="enable"
 						value="${customer.user.enable }" /></td>
-			</tr>
+			</tr> --%>
 			<tr>
 				<td colspan="2"><input type="submit" value="Update Profile" /></td>
 			</tr>

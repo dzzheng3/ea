@@ -24,6 +24,6 @@
 		
 	</form>
 	<h2>New member!SignUp Here</h2>
-	<a href="/register">Register</a>
+	<a href="register">Register</a>
 </body>
 </html>
