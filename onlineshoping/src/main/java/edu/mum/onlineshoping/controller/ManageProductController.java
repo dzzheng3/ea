@@ -47,6 +47,9 @@ public class ManageProductController {
 //			for (ObjectError error : list) {
 //				System.out.println(error.getCode() + "---" + error.getArguments() + "---" + error.getDefaultMessage());
 //			}
+			List<Category> categories = categoryService.getAll();
+			System.out.println(categories.size()+"");
+			model.addAttribute("categories", categories);
 			return "admin/addProduct";
 		}
 		productService.addProduct(product);

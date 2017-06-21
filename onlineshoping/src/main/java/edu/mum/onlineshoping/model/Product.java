@@ -25,13 +25,18 @@ public class Product {
 	@javax.persistence.Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long Id;
+	@NotEmpty(message="Not empoty!")
 	private String pName;
+	@NotNull(message="Not null!")
 	private double unitPrice;
+	@NotEmpty
 	private String description;
+	@NotNull
 	private int unitsInStock;	
 	private boolean discount = true;
+	@NotEmpty(message="Not empoty!")
 	private String conditioned;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	private Category category;
 	/*@OneToMany(fetch= FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Review> reviews;*/

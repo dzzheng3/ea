@@ -23,22 +23,32 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.sun.mail.handlers.message_rfc822;
+
 @Entity
 public class Customer {
 	@javax.persistence.Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long Id;
+	@NotEmpty
 	private String fName;
 	private String lName;
+	@NotEmpty
 	private String phone;
+	@Email
 	private String email;
 	@DateTimeFormat(pattern="MM/dd/yyyy")
+	@NotNull
 	@Temporal(TemporalType.DATE)
+	@Past
 	private Date dob;
+	@NotEmpty
 	private String identificationNumber;
 	@OneToOne(cascade=CascadeType.ALL)
+	@Valid
 	private Address address;
 	@OneToOne(cascade = CascadeType.ALL)
+	@Valid
 	private User user;
 	/*@OneToMany(fetch= FetchType.LAZY, cascade=CascadeType.ALL)
 	private List<Order> orders;*/

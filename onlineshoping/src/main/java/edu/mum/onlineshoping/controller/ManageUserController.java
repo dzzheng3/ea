@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.mum.onlineshoping.model.Customer;
+import edu.mum.onlineshoping.model.Role;
 import edu.mum.onlineshoping.service.UserService;
 
 @Controller("/admin/manageUser")
@@ -25,6 +26,7 @@ public class ManageUserController {
 	public String addUser(Model model) {
 		Customer customer = new Customer();
 		model.addAttribute("customer", customer);
+		model.addAttribute("role", Role.values());
 		System.out.println("/addUser");
 		return "/admin/addUser";
 	}
@@ -63,6 +65,7 @@ public class ManageUserController {
 		System.out.println("/updateUsersPage");
 		Customer customer = UserService.findOne(id);
 		map.put("customer", customer);
+		map.put("role", Role.values());
 		return "/admin/updateUser";
 	}
 
@@ -83,6 +86,7 @@ public class ManageUserController {
 //			for (ObjectError error : list) {
 //				System.out.println(error.getCode() + "---" + error.getArguments() + "---" + error.getDefaultMessage());
 //			}
+			model.addAttribute("role", Role.values());
 			return "admin/updateUser";
 		}
 		UserService.save(customer);

@@ -79,7 +79,7 @@
 			</tr>
 			<tr>
 				<td><form:label path="user.hasRole">hasRole:</form:label></td>
-				<td><form:input path="user.hasRole" value="${customer.user.hasRole }"/></td>
+				<td><form:select path="user.hasRole" items="${role}" /></td>
 				<td><form:errors path="user.hasRole" cssClass="error" /></td>
 			</tr>
 			<tr>
