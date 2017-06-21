@@ -6,56 +6,69 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>My Profile</title>
 </head>
 <body>
-	<form:form modelAttribute="person" action="/user/updateProfile">
-		<c:if test="${person.id != null }">
+<h2>Personal Information</h2>
+	<form:form modelAttribute="customer" action="profile">
+		<c:if test="${customer.id != null }">
 			<form:hidden path="id" />
 		</c:if>
 		<table border="1">
+		
 			<tr>
-				<td><form:label path="firstName">firstName:</form:label></td>
-				<td><form:input path="firstName" value="${person.firstName }" /></td>
+				<td><form:label path="fName">FirstName:</form:label></td>
+				<td><form:input path="fName" value="${customer.fName }" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="lastName">lastName:</form:label></td>
-				<td><form:input path="lastName" value="${person.lastName }" /></td>
+				<td><form:label path="lName">LastName:</form:label></td>
+				<td><form:input path="lName" value="${customer.lastName }" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="email">email:</form:label></td>
-				<td><form:input path="email" value="${person.email }" /></td>
+				<td><form:label path="email">Email:</form:label></td>
+				<td><form:input path="email" value="${customer.email }" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="phone">phone:</form:label></td>
-				<td><form:input path="phone" value="${person.phone }" /></td>
+				<td><form:label path="phone">Phone:</form:label></td>
+				<td><form:input path="phone" value="${customer.phone }" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="address.city">city:</form:label></td>
+				<td><form:label path="identificationNumber">Identification No:</form:label></td>
+				<td><form:input path="identificationNumber"
+						value="${customer.identificationNumber }" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="dob">DOB:</form:label></td>
+				<td><form:input path="dob" value="${customer.dob }" /></td>
+			</tr>
+			
+			<tr>
+				<td><form:label path="address.city">City:</form:label></td>
 				<td><form:input path="address.city"
-						value="${person.address.city }" /></td>
+						value="${customer.address.city }" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="address.state">state:</form:label></td>
+				<td><form:label path="address.state">State:</form:label></td>
 				<td><form:input path="address.state"
-						value="${person.address.state }" /></td>
+						value="${customer.address.state }" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="address.country">country:</form:label></td>
+				<td><form:label path="address.country">Country:</form:label></td>
 				<td><form:input path="address.country"
-						value="${person.address.country }" /></td>
+						value="${customer.address.country }" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="address.zipcode">zipcode:</form:label></td>
+				<td><form:label path="address.zipcode">Zipcode:</form:label></td>
 				<td><form:input path="address.zipcode"
-						value="${person.address.zipcode }" /></td>
+						value="${customer.address.zipcode }" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="enable">enable</form:label></td>
-				<td><form:checkbox path="enable" value="${person.enable }" /></td>
+				<td><form:label path="enable">Enable</form:label></td>
+				<td><form:checkbox path="enable"
+						value="${customer.user.enable }" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="save" /></td>
+				<td colspan="2"><input type="submit" value="Save" /></td>
 			</tr>
 		</table>
 	</form:form>

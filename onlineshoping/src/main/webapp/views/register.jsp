@@ -9,8 +9,7 @@
 </head>
 <body>
 	<table>
-		<form:form modelAttribute="customer" action="/register"
-			method="post">
+		<form:form modelAttribute="customer" action="/register" method="post">
 			<tr>
 				<td><form:label path="fName">FirstName:</form:label></td>
 				<td><form:input path="fName" /></td>
@@ -31,11 +30,11 @@
 				<td><form:input path="email" /></td>
 				<td><form:errors path="email" /></td>
 			</tr>
-			<%-- <tr>
+			<tr>
 				<td><form:label path=" identificationNumber">Identification No:</form:label></td>
 				<td><form:input path=" identificationNumber" /></td>
 				<td><form:errors path=" identificationNumber" /></td>
-			</tr> --%>
+			</tr>
 			<tr>
 				<td><form:label path="phone">Phone:</form:label></td>
 				<td><form:input path="phone" /></td>

@@ -1,4 +1,4 @@
-package edu.mum.onlineshoping.controller;
+/*package edu.mum.onlineshoping.controller;
 
 import java.security.Principal;
 
@@ -26,7 +26,7 @@ public class UserController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String signUp(Model model) {
-		System.out.println("111111111111111");
+		
 		model.addAttribute("customer", new Customer());
 		return "user/register";
 	}
@@ -34,7 +34,7 @@ public class UserController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String afterSignUp(@Valid Customer customer, BindingResult result, RedirectAttributes redirectAttributes,
 			Model model) {
-		System.out.println("22222222222222");
+		
 		model.addAttribute("customer", customer);
 		customer.getUser().setHasRole(Role.ROLE_CUSTOMER);
 		if (result.hasErrors()) {
@@ -77,7 +77,7 @@ public class UserController {
 		return "redirect:/profile";
 	}
 
-	@RequestMapping(value = "/account", method = RequestMethod.GET)
+	@RequestMapping(value = "/profile", method = RequestMethod.GET)
 	public String account(Model model, Principal principal) {
 		String name = principal.getName();
 		Customer customer = userService.findOneWithName(name);
@@ -87,3 +87,4 @@ public class UserController {
 	}
 
 }
+*/

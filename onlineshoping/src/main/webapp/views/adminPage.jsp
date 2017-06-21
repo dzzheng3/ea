@@ -23,7 +23,8 @@
 	<br />
 	<br />
 	<a href="/logout">logout</a>
-	Manage Coment:
+	<br/>
+	Manage Comment:
 	<br />
 	<a href="/admin/listOrder">List orders</a>
 	<br />

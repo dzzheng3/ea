@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable()
 		.authorizeRequests()
 		.antMatchers("/user/**").access("hasRole('USER')").antMatchers("/admin/**")
-				.access("hasRole('ADMIN')").antMatchers("/", "/home","/index").permitAll().anyRequest().authenticated()
+				.access("hasRole('ADMIN')").antMatchers("/", "/home","/register","/index").permitAll().anyRequest().authenticated()
 				.and()
 				.formLogin()
 				.loginPage("/login")
@@ -36,5 +36,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("admin").password("123").roles("ADMIN");
 		auth.inMemoryAuthentication().withUser("user@gmail.com").password("123").roles("USER");
+		auth.inMemoryAuthentication().withUser("channing@gmail.com").password("12345").roles("USER");
 	}
 }
