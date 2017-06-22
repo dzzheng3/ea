@@ -73,7 +73,7 @@ public class ShoppingCartController {
 	// place order
 	@RequestMapping(value = "/editinfo", method = RequestMethod.POST)
 	public String afteredit(@ModelAttribute("user") @Valid Customer customer, BindingResult result, Model model) {
-		customer.getUser().setHasRole(Role.ROLE_CUSTOMER);
+		customer.getUser().setHasRole(Role.ROLE_USER);
 		if (result.hasErrors()) {
 			return "editinfo";
 		}

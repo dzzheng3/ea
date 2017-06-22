@@ -16,12 +16,12 @@
 	</div>
 	<br /><h3>Products</h3>
 	<br />
-	<a href="/products">List Products</a>
+	<a href="/listProduct">List Products</a>
 	<br />
+	<a href="/cartList">My Shopping Cart</a>
 	<br />
 	<br />
 	<a href="/login">Logout</a>
-	
-<%-- <%@ include file="admin/header.jsp"%> --%>
+	<%-- <%@ include file="admin/header.jsp"%>  --%>
 </body>
 </html>

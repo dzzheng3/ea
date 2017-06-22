@@ -58,22 +58,24 @@ public String edit(@PathVariable Long id, Model model) {
 	return "editProfile";
 }*/
 
-@RequestMapping(value = "/editProfile", method = RequestMethod.POST)
-public String afterEdit(@ModelAttribute("customer") @Valid Customer customer, BindingResult result,
+@RequestMapping(value = "/profile", method = RequestMethod.POST)
+public String afterEdit(@Valid Customer customer, BindingResult result,
 		RedirectAttributes redirectAttributes) {
-	customer.getUser().setHasRole(Role.ROLE_CUSTOMER);
+	System.out.println("1111111111");
+//	customer.getUser().setHasRole(Role.ROLE_USER);
 	if (result.hasErrors())
-		return "editProfile";
-	customer.setId(customer.getId());
+		return "profile";
+//	customer.setId(customer.getId());
 	userService.edit(customer);
 	redirectAttributes.addFlashAttribute("customer", customer);
-	return "redirect:/profile";
+	return "redirect:/user";
 }
 
 @RequestMapping(value = "/profile", method = RequestMethod.GET)
 public String account(Model model, Principal principal) {
 	String name = principal.getName();
 	System.out.println(name);
+	
 	Customer customer = userService.findOneWithName(name);
 	System.out.println(customer);
 	model.addAttribute("customer", customer);

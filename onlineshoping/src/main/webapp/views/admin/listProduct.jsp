@@ -2,7 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -39,20 +40,27 @@
 					<td>${product.category.description}</td>
 
 					<sec:authorize access="hasRole('ROLE_ADMIN')">
-					<td><a href="/deleteProduct/${product.id }">Delete</a></td>
-					<td><a href="/updateProduct/${product.id }">Update</a></td>
+						<td><a href="/deleteProduct/${product.id }">Delete</a></td>
+						<td><a href="/updateProduct/${product.id }">Update</a></td>
 					</sec:authorize>
-					
-					
+
+
 					<sec:authorize access="hasRole('ROLE_USER')">
-					<td><a href="/addShoppingCart/${product.id }">Add To Cart</a></td>
+						<td><a href="/addShoppingCart/${product.id }">Add To Cart</a></td>
 					</sec:authorize>
-					
-					
+
+
 				</tr>
 			</c:forEach>
 		</table>
 	</c:if>
-	<a href="/admin">go home</a>
+	<br/>
+	<br/>
+	<sec:authorize access="hasRole('ROLE_ADMIN')">
+		<a href="/admin">Go home</a>
+	</sec:authorize>
+	<sec:authorize access="hasRole('ROLE_USER')">
+		<td><a href="/viewProducts">Go To Previous Page</a></td>
+	</sec:authorize>
 </body>
 </html>

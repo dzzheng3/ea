@@ -42,16 +42,7 @@ public class Customer {
 	@OneToOne(cascade = CascadeType.ALL)
 	@Valid
 	private User user;
-	/*@OneToMany(fetch= FetchType.LAZY, cascade=CascadeType.ALL)
-	private List<Order> orders;*/
-	/*@Transient
-	private MultipartFile multipartfile;
-	public MultipartFile getMultipartfile() {
-		return multipartfile;
-	}
-	public void setMultipartfile(MultipartFile multipartfile) {
-		this.multipartfile = multipartfile;
-	}*/
+	
 	public Long getId() {
 		return Id;
 	}

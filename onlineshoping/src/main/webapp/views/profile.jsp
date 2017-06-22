@@ -10,65 +10,69 @@
 </head>
 <body>
 <h2>Personal Information</h2>
-	<form:form modelAttribute="customer" action="profile">
+	<form:form modelAttribute="customer" action="profile" method="post">
 		<c:if test="${customer.id != null }">
 			<form:hidden path="id" />
 		</c:if>
 		<table border="1">
 		
 			<tr>
-				<td><form:label path="fName">FirstName:</form:label></td>
-				<td><form:input path="fName" value="${customer.fName}" /></td>
+				<td><form:label path="fName">fName:</form:label></td>
+				<td><form:input path="fName" value="${customer.fName }"/></td>
+				<td><form:errors path="fName" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="lName">LastName:</form:label></td>
-				<td><form:input path="lName" value="${customer.lastName}" /></td>
+				<td><form:label path="lName">lName:</form:label></td>
+				<td><form:input path="lName" value="${customer.lName }"/></td>
+				<td><form:errors path="lName" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="email">Email:</form:label></td>
-				<td><form:input path="email" value="${customer.email}" /></td>
+				<td><form:label path="phone">phone:</form:label></td>
+				<td><form:input path="phone" value="${customer.phone }"/></td>
+				<td><form:errors path="phone" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="phone">Phone:</form:label></td>
-				<td><form:input path="phone" value="${customer.phone}" /></td>
+				<td><form:label path="email">email:</form:label></td>
+				<td><form:input path="email" value="${customer.email }"/></td>
+				<td><form:errors path="email" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="identificationNumber">Identification No:</form:label></td>
-				<td><form:input path="identificationNumber"
-						value="${customer.identificationNumber}" /></td>
+				<td><form:label path="dob">dob:</form:label></td>
+				<td><form:input path="dob" value="${customer.dob }"/></td>
+				<td><form:errors path="dob" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="dob">DOB:</form:label></td>
-				<td><form:input path="dob" value="${customer.dob}" /></td>
-			</tr>
-			
-			<tr>
-				<td><form:label path="address.city">City:</form:label></td>
-				<td><form:input path="address.city"
-						value="${customer.address.city }" /></td>
+				<td><form:label path="identificationNumber">identificationNumber:</form:label></td>
+				<td><form:input path="identificationNumber" value="${customer.identificationNumber }"/></td>
+				<td><form:errors path="identificationNumber" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="address.state">State:</form:label></td>
-				<td><form:input path="address.state"
-						value="${customer.address.state }" /></td>
+				<td><form:label path="address.street">street:</form:label></td>
+				<td><form:input path="address.street" value="${customer.address.street }"/></td>
+				<td><form:errors path="address.street" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="address.country">Country:</form:label></td>
-				<td><form:input path="address.country"
-						value="${customer.address.country }" /></td>
+				<td><form:label path="address.city">city:</form:label></td>
+				<td><form:input path="address.city" value="${customer.address.city }"/></td>
+				<td><form:errors path="address.city" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="address.zipcode">Zipcode:</form:label></td>
-				<td><form:input path="address.zipcode"
-						value="${customer.address.zipcode }" /></td>
+				<td><form:label path="address.state">state:</form:label></td>
+				<td><form:input path="address.state" value="${customer.address.state }"/></td>
+				<td><form:errors path="address.state" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="enable">Enable</form:label></td>
-				<td><form:checkbox path="enable"
-						value="${customer.user.enable }" /></td>
+				<td><form:label path="address.zip">zip:</form:label></td>
+				<td><form:input path="address.zip" value="${customer.address.zip }"/></td>
+				<td><form:errors path="address.zip" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Save" /></td>
+				<td><form:label path="address.country">country:</form:label></td>
+				<td><form:input path="address.country" value="${customer.address.country }"/></td>
+				<td><form:errors path="address.country" cssClass="error" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="save" /></td>
 			</tr>
 		</table>
 	</form:form>
