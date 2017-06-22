@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: onlineshoping
 Implementation-Version: 1.5.3.RELEASE
-Built-By: naiqing
+Built-By: acer
 Implementation-Vendor-Id: edu.mum
-Build-Jdk: 1.8.0_66
+Build-Jdk: 1.8.0_131
 Implementation-URL: http://projects.spring.io/spring-boot/onlineshopin
  g/
 Created-By: Maven Integration for Eclipse
