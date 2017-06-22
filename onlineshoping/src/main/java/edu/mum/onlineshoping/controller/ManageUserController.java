@@ -41,6 +41,7 @@ public class ManageUserController {
 //			for (ObjectError error : list) {
 //				System.out.println(error.getCode() + "---" + error.getArguments() + "---" + error.getDefaultMessage());
 //			}
+			model.addAttribute("role", Role.values());
 			return "admin/addUser";
 		}
 		UserService.save(customer);

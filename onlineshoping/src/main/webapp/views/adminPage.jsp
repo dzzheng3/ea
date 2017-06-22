@@ -12,7 +12,8 @@
 <body>
 	<div>
 		Current User :
-		<sec:authentication property="name" />          <a href="/logout">logout</a>
+		<sec:authentication property="name" />
+		<a href="/logout">logout</a>
 	</div>
 	<br />
 	<a href="/manageProduct">Manage products</a>
@@ -26,10 +27,11 @@
 	<!-- <br /> Manage Coment:
 	<br />
 	<a href="#">Manage Coment</a> -->
-
 	<br />
-
 	<br />
+	<br />
+	<a href="/logout">logout</a>
+
 	<br />
 </body>
 </html>

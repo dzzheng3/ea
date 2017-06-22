@@ -7,14 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-products:<br/>
-<a href="/createProduct">Create</a>
-<a href="/listProducts">List</a><br/><br/>
-persons:<br/>
-<a href="/createPerson">Create</a>
-<a href="/listPersons">List</a>
-orders:<br/>
-<a href="/createOrder">Create</a>
-<a href="/listOrder">List orders</a><br/><br/>
+Not a user and admin!
 </body>
 </html>

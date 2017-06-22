@@ -6,10 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>My Profile</title>
+<title>Edit Profile</title>
 </head>
 <body>
-	<form:form modelAttribute="customer" action="/user/editProfile">
+	<form:form modelAttribute="customer" action="editProfile" method="post">
 		<c:if test="${customer.id != null }">
 			<form:hidden path="id" />
 		</c:if>
@@ -20,7 +20,7 @@
 			</tr>
 			<tr>
 				<td><form:label path="lName">LastName:</form:label></td>
-				<td><form:input path="lName" value="${customer.lastName }" /></td>
+				<td><form:input path="lName" value="${customer.lName }" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="email">Email:</form:label></td>
@@ -30,14 +30,10 @@
 				<td><form:label path="phone">Phone:</form:label></td>
 				<td><form:input path="phone" value="${customer.phone }" /></td>
 			</tr>
-			<%-- <tr>
+			<tr>
 				<td><form:label path="identificationNumber">Identification No:</form:label></td>
 				<td><form:input path="identificationNumber"
 						value="${customer.identificationNumber }" /></td>
-			</tr> --%>
-			<tr>
-				<td><form:label path="dob">DOB:</form:label></td>
-				<td><form:input path="dob" value="${customer.dob }" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="address.city">City:</form:label></td>
@@ -65,7 +61,7 @@
 						value="${customer.user.enable }" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Save" /></td>
+				<td colspan="2"><input type="submit" value="Update Profile" /></td>
 			</tr>
 		</table>
 	</form:form>

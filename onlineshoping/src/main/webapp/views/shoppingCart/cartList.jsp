@@ -25,16 +25,14 @@
 			</tr>
 			<c:forEach items="${requestScope.shoppingCart }" var="shoppingCart">
 				<tr>
-					<td>${shoppingCart.orderDetails.product.pname}</td>
+					<td>${shoppingCart.orderDetails.product.pName}</td>
 					<td>${shoppingCart.orderDetails.unitCost}</td>
 					<td>${shoppingCart.quantity}</td>
 					<td>${shoppingCart.orderDetails.subTotal}</td>
 
 
 
-					<td><a href="#"
-						onclick="deleteShoppingCart('${shoppingCart.id}')">Cancel
-							Order</a></td>
+					<td><a href="/removeShoppingCart/${shoppingCart.id}">Cancel	Order</a></td>
 				</tr>
 			</c:forEach>
 			<tr>
@@ -43,14 +41,14 @@
 			</tr>
 			<tr>
 				<th>Total</th>
-				<th>$ $totalPrice</th>
+				<th>$ ${totalPrice}</th>
 			</tr>
 			<tr>
 			<td><a href="/listProduct">See More Products</a>
 			</td>
 			<td></td>
 			<td></td>
-			<td><a href="#" onclick="deleteAllCarts()">Cancel Shopping</a></td>
+			<td><a href="/removeAllShoppingCart" onclick="deleteAllCarts()">Cancel Shopping</a></td>
 			</tr>
 			
 			
