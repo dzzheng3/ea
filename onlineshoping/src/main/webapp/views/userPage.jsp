@@ -13,7 +13,7 @@
 		<h1>Current User :</h1>
 		<sec:authentication property="name" />
 	</div>
-	<a href="/editProfile"> My Profile </a>
+	<a href="/profile"> My Profile </a>
 	<br />
 	<br />
 	<h2>Products</h2>

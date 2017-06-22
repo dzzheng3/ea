@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import edu.mum.onlineshoping.jms.MsgSender;
 
 @Controller
-public class HomeController implements CommandLineRunner {
+public class HomeController  {
 	@Autowired
 	JmsTemplate jmsTemplate;
 
@@ -37,13 +37,11 @@ public class HomeController implements CommandLineRunner {
 
 	@RequestMapping("/user")
 	public String toUserPage(HttpSession httpSession) throws Exception {
-		run("");
 		return "userPage";
 	}
 
 	@RequestMapping("/admin")
 	public String toAdminPage() throws Exception {
-		run("1");
 		return "adminPage";
 	}
 
@@ -52,21 +50,6 @@ public class HomeController implements CommandLineRunner {
 		return "login";
 	}
 
-	@Override
-	public void run(String... strings) throws Exception {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if (authentication != null) {
-			UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-			// httpSession.setAttribute("msg", ""+userDetails.getUsername()+"
-			// login!!");
-			jmsTemplate.send("my-destination", new MsgSender(userDetails.getUsername() + " login!!"));
-		}
-	}
-
-	@JmsListener(destination = "my-destination")
-	public void receiveMessage(String message) {
-		System.out.println("receive message£º" + message);
-	}
 
 	// @Autowired
 	// public PersonService personService;

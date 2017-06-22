@@ -18,28 +18,28 @@
 		
 			<tr>
 				<td><form:label path="fName">FirstName:</form:label></td>
-				<td><form:input path="fName" value="${customer.fName }" /></td>
+				<td><form:input path="fName" value="${customer.fName}" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="lName">LastName:</form:label></td>
-				<td><form:input path="lName" value="${customer.lastName }" /></td>
+				<td><form:input path="lName" value="${customer.lastName}" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="email">Email:</form:label></td>
-				<td><form:input path="email" value="${customer.email }" /></td>
+				<td><form:input path="email" value="${customer.email}" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="phone">Phone:</form:label></td>
-				<td><form:input path="phone" value="${customer.phone }" /></td>
+				<td><form:input path="phone" value="${customer.phone}" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="identificationNumber">Identification No:</form:label></td>
 				<td><form:input path="identificationNumber"
-						value="${customer.identificationNumber }" /></td>
+						value="${customer.identificationNumber}" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="dob">DOB:</form:label></td>
-				<td><form:input path="dob" value="${customer.dob }" /></td>
+				<td><form:input path="dob" value="${customer.dob}" /></td>
 			</tr>
 			
 			<tr>
