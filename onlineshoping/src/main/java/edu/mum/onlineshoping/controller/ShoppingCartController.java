@@ -49,23 +49,24 @@ public class ShoppingCartController {
 	@RequestMapping(value = "/removeShoppingCart/{shoppingCartId}", method = RequestMethod.GET)
 	@ResponseStatus(value = HttpStatus.NO_CONTENT)
 	public String removeCart(@PathVariable Long shoppingCartId) {
-		System.out.println("shoppingCartId" + shoppingCartId);
+//		System.out.println("shoppingCartId" + shoppingCartId);
 		ShoppingCart shoppingCart = shoppingCartService.getById(shoppingCartId);
-		shoppingCartService.deletShoppingCart(shoppingCart);
+		if (shoppingCart != null)
+			shoppingCartService.deletShoppingCart(shoppingCart);
 		return "redirect:cartList";
 	}
 
-	@RequestMapping(value = "/removeAllShoppingCart", method = RequestMethod.PUT)
-	@ResponseStatus(value = HttpStatus.NO_CONTENT)
-	public void removeAllCart() {
-
+	@RequestMapping(value = "/removeAllShoppingCart", method = RequestMethod.GET)
+	// @ResponseStatus(value = HttpStatus.NO_CONTENT)
+	public String removeAllCart() {
 		shoppingCartService.deletAllCart();
+		return "redirect:cartList";
 	}
 
 	// mapping the user for check out
 	@RequestMapping(value = "/editinfo/{username}", method = RequestMethod.GET)
 	public String editInfo(@PathVariable("username") String username, Model model) {
-		Customer customer = userService.findOneWithName(username);
+		Customer customer = userService.findOneWithName(username).get(0);
 		model.addAttribute("user", customer);
 		return "editinfo";
 	}

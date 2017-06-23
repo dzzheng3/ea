@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public Customer findOneWithName(String name) {
+	public List<Customer> findOneWithName(String name) {
 		// TODO Auto-generated method stub
 		return userRepository.findOneWithName(name);
 	}

@@ -48,7 +48,7 @@
 			</td>
 			<td></td>
 			<td></td>
-			<td><a href="/removeAllShoppingCart" onclick="deleteAllCarts()">Cancel Shopping</a></td>
+			<td><a href="/removeAllShoppingCart">Cancel Shopping</a></td>
 			</tr>
 			
 			

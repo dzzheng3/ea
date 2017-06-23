@@ -10,12 +10,9 @@
 </head>
 <body>
 <h2>Personal Information</h2>
-	<form:form modelAttribute="customer" action="profile" method="post">
-		<c:if test="${customer.id != null }">
-			<form:hidden path="id" />
-		</c:if>
-		<table border="1">
+<form:form modelAttribute="customer" action="/profile" method="post">
 		
+		<table>
 			<tr>
 				<td><form:label path="fName">fName:</form:label></td>
 				<td><form:input path="fName" value="${customer.fName }"/></td>
@@ -72,7 +69,17 @@
 				<td><form:errors path="address.country" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="save" /></td>
+				<td><form:label path="user.username">username:</form:label></td>
+				<td><form:input path="user.username" value="${customer.user.username }"/></td>
+				<td><form:errors path="user.username" cssClass="error" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="user.enabled">enabled:</form:label></td>
+				<td><form:checkbox path="user.enabled" value="${customer.user.enabled }"/></td>
+				<td><form:errors path="user.enabled" cssClass="error" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="updateUser" /></td>
 			</tr>
 		</table>
 	</form:form>

@@ -76,7 +76,7 @@ public String account(Model model, Principal principal) {
 	String name = principal.getName();
 	System.out.println(name);
 	
-	Customer customer = userService.findOneWithName(name);
+	Customer customer = userService.findOneWithName(name).get(0);
 	System.out.println(customer);
 	model.addAttribute("customer", customer);
 	return "profile";

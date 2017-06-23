@@ -29,7 +29,7 @@ public class Customer {
 	private String phone;
 	@Email
 	private String email;
-	@DateTimeFormat(pattern="MM/dd/yyyy")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	@NotNull
 	@Temporal(TemporalType.DATE)
 	@Past
